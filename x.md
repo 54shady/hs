@@ -1,5 +1,9 @@
 # USB Sniffing with tcpdump and wireshark
 
+[参考文章http://blog.csdn.net/xiaojsj111/article/details/14127607](http://blog.csdn.net/xiaojsj111/article/details/14127607)
+
+[参考文章http://omappedia.org/wiki/USB_Sniffing_with_tcpdump](http://omappedia.org/wiki/USB_Sniffing_with_tcpdump)
+
 ## 安装必要软件
 
 sudo emerge -v net-analyzer/tcpdump
