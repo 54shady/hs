@@ -1,3 +1,40 @@
+# USB Sniffing with tcpdump and wireshark
+
+## 安装必要软件
+
+sudo emerge -v net-analyzer/tcpdump
+
+sudo emerge -v net-analyzer/wireshark
+
+## 操作步骤
+mount -t debugfs none_debugs /sys/kernel/debug
+
+cat /sys/kernel/debug/usb/devices 确定usb的总线号
+
+tcpdump -D
+```shell
+1.enp1s0 [Up, Running]
+2.any (Pseudo-device that captures on all interfaces) [Up, Running]
+3.lo [Up, Running, Loopback]
+4.nflog (Linux netfilter log (NFLOG) interface)
+5.nfqueue (Linux netfilter queue (NFQUEUE) interface)
+6.dbus-system (D-Bus system bus)
+7.dbus-session (D-Bus session bus)
+8.usbmon1 (USB bus number 1)
+9.usbmon2 (USB bus number 2)
+```
+## 收集数据(以usbmon1为例)
+
+tcpdump -i usbmon1 -w usblog.pcap &
+
+### 停止采集数据
+
+killall tcpdump
+
+### 使用wireshark 参看数据格式
+
+wireshark usblog.pcap
+
 # fastboot 烧写3288镜像(参考RockChip_Uboot_V3.3.pdf)
 
 默认设备是处于未解锁状态的,所以先要解锁设备才可以使用fastboot烧写
