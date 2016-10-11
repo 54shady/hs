@@ -11,9 +11,25 @@ sudo emerge -v net-analyzer/tcpdump
 sudo emerge -v net-analyzer/wireshark
 
 ## 操作步骤
-mount -t debugfs none_debugs /sys/kernel/debug
 
-cat /sys/kernel/debug/usb/devices 确定usb的总线号
+- 确认内核配置了usbmonitor
+
+```shell
+make menuconfig
+	Device Drivers -->
+		USB Support -->
+			USB Monitor --> Select * not M
+```
+- mount -t debugfs none_debugs /sys/kernel/debug
+
+- 检查是否存在目录 /sys/kernel/debug/usb/usbmon
+
+```shell
+#ls /sys/kernel/debug/usb/usbmon
+0s  0u  1s  1t  1u  2s  2t  2u  3s  3t  3u
+```
+
+- cat /sys/kernel/debug/usb/devices 确定usb的总线号
 
 tcpdump -D
 ```shell
