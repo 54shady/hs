@@ -168,3 +168,12 @@ package="com.android.calculator2"
 播放本地视频
 # am start -a android.intent.action.VIEW -d your_video_file.mp4 -t "video/*"
 ```
+
+# NMOST PMOST
+
+![dt0.png](./pngs/dt0.png)
+![js1.png](./pngs/js1.png)
+![js.png](./pngs/js.png)
+![n.png](./pngs/n.png)
+![p.png](./pngs/p.png)
+![sdg.png](./pngs/sdg.png)
