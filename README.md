@@ -2,6 +2,18 @@
 
 my happy days in HS
 
+# FIQ Debug
+
+[参考文章](http://blog.csdn.net/azloong/article/details/45768633)
+
+使用minicom进入FIQ Debug mode
+
+	ctrl+a+z+f 或ctrl+a+f
+
+退出debug模式
+
+	输入console
+
 # USB Sniffing with tcpdump and wireshark
 
 [参考文章http://blog.csdn.net/xiaojsj111/article/details/14127607](http://blog.csdn.net/xiaojsj111/article/details/14127607)
