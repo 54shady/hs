@@ -166,14 +166,41 @@ rkflashtool w partname < file          write flash partition
 
 ```shell
 # am start -n ｛(package)包名｝/｛包名｝.{活动(activity)名称}
+```
+
 程序的入口类可以从每个应用的AndroidManifest.xml的文件中得到,以计算器(calculator)为例,它的
 AndroidManifest.xml文件位于packages/apps/Calculator/AndroidManifest.xml
 
+```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
 package="com.android.calculator2"
 
-由此计算器(calculator)的启动方法为:# am start -n com.android.calculator2/com.android.calculator2.Calculator
+<activity android:name="Calculator"
+```
+
+由此计算器(calculator)的启动方法为:
+```shell
+# am start -n com.android.calculator2/com.android.calculator2.Calculator
+```
+
+照相机的manefest在android4.4上如下
+
+packages/apps/Camera2/AndroidManifest.xml
+
+```xml
+package="com.android.camera2"
+
+<acttivity
+	android:name="com.android.camera.CameraActivity"
+```
+package名为com.android.camera2
+
+activity名为com.android.camera.CameraActivity
+
+开启照相机
+```shell
+am start -n com.android.camera2/com.android.camera.CameraActivity
 ```
 
 ```shell
