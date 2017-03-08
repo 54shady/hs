@@ -274,3 +274,17 @@ struct cmd_tbl_s {
 ![n.png](./pngs/n.png)
 ![p.png](./pngs/p.png)
 ![sdg.png](./pngs/sdg.png)
+
+# Misc
+
+## 分包解压缩
+
+[参考文章](http://blog.csdn.net/xiongmc/article/details/17721533)
+
+### 分包压缩文件
+
+	tar -jvcf - Firefly-RK3399_Android6.0_git_20170218.tar.gz | split -b 1G - rk3399.bz2
+
+### 解压分包文件
+
+	cat rk3399.bz2a* | tar -jx
